@@ -1,11 +1,11 @@
 name: Publish App
-run-name: ${{github.event.head_commit.message}}
+run-name: ${{ github.event.head_commit.message }}
+
 on:
   push:
     tags:
-      - v*
-    branches:
-      - master
+      - 'v*'
+
 jobs:
   get-source-code:
     name: 'Get source code project'
@@ -14,23 +14,28 @@ jobs:
       output1: ${{ steps.upload-dist.outputs.artifact-id }}
     steps:
       - name: Get source code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
+
       - name: Setup node version
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: '26.4.0'
+
       - name: Install nodejs dependencies
         run: npm ci
+
       - name: Build app
         run: npm run build
+
       - name: Save results build in artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v4
         id: upload-dist
         with:
           name: upload-dist
           path: |
-            nginx.conf
-            dist/
+            *
+            !node_modules/
+            !.git/
 
   release-app:
     name: 'Release new app version'
@@ -38,14 +43,16 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Download files in artifact
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@v4
         with:
           name: upload-dist
           path: files
+
       - name: Compress files dist from artifact
         run: zip -r ./eventhub-${{ github.ref_name }}.zip ./files/dist/*
+
       - name: Release to Github
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             eventhub-${{ github.ref_name }}.zip
@@ -59,20 +66,16 @@ jobs:
       packages: write
     steps:
       - name: Download dist from artifact
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@v4
         with:
           name: upload-dist
-          path: files
-      - name: Create nginx Dockerfile
-        run: |
-          cat << 'EOF' > Dockerfile
-          FROM nginx:alpine
-          COPY ./files/dist/ /usr/share/nginx/html
-          COPY ./files/nginx.conf /etc/nginx/conf.d/default.conf
-          EOF
+          path: .
+
       - name: Build image
-        run: docker build -t ghcr.io/${{github.actor}}/eventhub-app:latest .
+        run: docker build -t ghcr.io/${{ github.actor }}/eventhub-app:latest .
+
       - name: Login to ghcr.io
-        run: echo -n ${{secrets.GITHUB_TOKEN}} | docker login ghcr.io --username ${{github.actor}} --password-stdin
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io --username "${{ github.actor }}" --password-stdin
+
       - name: Push image to ghcr
-        run: docker push ghcr.io/${{github.actor}}/eventhub-app:latest
+        run: docker push ghcr.io/${{ github.actor }}/eventhub-app:latest
