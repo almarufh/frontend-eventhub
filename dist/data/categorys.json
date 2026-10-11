@@ -1,0 +1,17 @@
+[
+  { "id": "ctg-1", "title": "Technology" },
+  { "id": "ctg-2", "title": "Ai" },
+  { "id": "ctg-3", "title": "Backend" },
+  { "id": "ctg-4", "title": "Frontend" },
+  { "id": "ctg-5", "title": "Mobile" },
+  { "id": "ctg-6", "title": "DevOps" },
+  { "id": "ctg-7", "title": "Cybersecurity" },
+  { "id": "ctg-8", "title": "Science" },
+  { "id": "ctg-9", "title": "UI/UX" },
+  { "id": "ctg-10", "title": "Blockchain" },
+  { "id": "ctg-11", "title": "Management" },
+  { "id": "ctg-12", "title": "Database" },
+  { "id": "ctg-13", "title": "Assurance" },
+  { "id": "ctg-14", "title": "Source" },
+  { "id": "ctg-15", "title": "Leadership" }
+]

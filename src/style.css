@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+    body > div#root {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+}
+
+@theme {
+    /* color */
+    --color-light: #FFFFFF;
+    --color-dark: #111111;
+    --color-dark-primary: #18181B;
+
+    /* bacground */
+    --color-primary: #FF5F22;
+    --color-primary6: #FF5F220F;
+    --color-primary8: #FF5F2214;
+    --color-secondary: #33B570;
+    --color-bg-secondary: #33B5701A;
+    --color-thirty: #F4F4F5;
+
+    --color-hijau10: #33B5701A;
+    --color-biru10: #3363FF1A;
+    --color-ungu: #9810FA;
+    --color-ungu-second: ##F3E8FF;
+
+    /* Borders */
+    --color-border-header: #E4E4E7;
+    --color-wh-5: #FFFFFF0D;
+    --color-wh-8: #FFFFFF14;
+
+    /* Font */
+    --color-font-primary: #52525C;
+    --color-font-secondary: #9F9FA9;
+    --color-font-thirty: #D4D4D8;
+    --color-font-forthy: #71717B;
+    --color-font-fivethy: #3F3F47;
+    --color-font-sixty: #3363FF;
+    --color-font-error: #FB2C36;
+
+
+    /* setup */
+    --spacing: 1px;
+}
+
+@utility my-center {
+    @apply flex items-center justify-center
+}
+
+@utility round-8 {
+    border-radius: 8px;
+    border : solid 0px;
+}
+
+@utility f-14 {
+    font-size: 14px;
+}
+
+@utility f-16 {
+    font-size: 16px;
+}
+
+@utility f-30 {
+    font-size: 30px;
+}
+
+@utility f-11 {
+    font-size: 11px;
+}
+
+@utility f-20 {
+    font-size: 20px;
+}
+
+@utility f-9 {
+    font-size: 9px;
+}

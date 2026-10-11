@@ -1,0 +1,46 @@
+[
+    {
+        "id": "dcs-1",
+        "userId": "user-1",
+        "from": {
+            "type": "event",
+            "id": "evt-3"
+        },
+        "message": "Is this session suitable for beginners?",
+        "createdAt": "1787723422110",
+        "updatedAt": "1787723422110"
+    },
+    {
+        "id": "dcs-2",
+        "userId": "user-1",
+        "from": {
+            "type": "community",
+            "id": "comm-12"
+        },
+        "message": "Yes! The afternoon session is entirely hands-on. Bring your laptop with Go 1.22+ installed.",
+        "createdAt": "1787731210940",
+        "updatedAt": "1787731210940"
+    },
+    {
+        "id": "dcs-3",
+        "userId": "user-1",
+        "from": {
+            "type": "event",
+            "id": "evt-12"
+        },
+        "message": "Where can I find the repository or code samples used in this session?",
+        "createdAt": "1787740110231",
+        "updatedAt": "1787740110231"
+    },
+    {
+        "id": "dcs-4",
+        "userId": "user-2",
+        "from": {
+            "type": "community",
+            "id": "comm-2"
+        },
+        "message": "Will the recording or slides be shared after the event?",
+        "createdAt": "1787719283011",
+        "updatedAt": "1787719283011"
+    }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "comm-1",
+    "tittle": "Jakarta Golang Developer Community",
+    "categoryIds": ["ctg-1", "ctg-3", "ctg-12"],
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+    "description": "Komunitas engineer backend dan antusias Go di Jakarta untuk sharing arsitektur microservices dan concurrency."
+  },
+  {
+    "id": "comm-2",
+    "tittle": "Bandung AI & Machine Learning Hub",
+    "categoryIds": ["ctg-2", "ctg-8"],
+    "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+    "description": "Wadah kolaborasi praktisi AI, Data Scientist, dan researcher di Bandung."
+  },
+  {
+    "id": "comm-3",
+    "tittle": "Surabaya Frontend Guild",
+    "categoryIds": ["ctg-1", "ctg-4", "ctg-9"],
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    "description": "Tempat berkumpulnya pegiat React, Vue, Next.js, dan web accessibility di Jawa Timur."
+  },
+  {
+    "id": "comm-4",
+    "tittle": "Indonesia Cloud & DevOps Alliance",
+    "categoryIds": ["ctg-6", "ctg-14"],
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+    "description": "Membahas implementasi Kubernetes, CI/CD pipelines, Docker, dan platform engineering modern."
+  },
+  {
+    "id": "comm-5",
+    "tittle": "Yogyakarta Mobile Innovators",
+    "categoryIds": ["ctg-5", "ctg-1"],
+    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80",
+    "description": "Komunitas mobile app development Android, iOS, React Native, dan Flutter di Yogyakarta."
+  },
+  {
+    "id": "comm-6",
+    "tittle": "Bali Cybersecurity Circle",
+    "categoryIds": ["ctg-7", "ctg-1"],
+    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    "description": "Diskusi mendalam seputar application security, penetration testing, dan secure coding."
+  },
+  {
+    "id": "comm-7",
+    "tittle": "Semarang UI/UX Collective",
+    "categoryIds": ["ctg-9", "ctg-11"],
+    "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80",
+    "description": "Komunitas product designer untuk bertukar studi kasus user research dan design system."
+  },
+  {
+    "id": "comm-8",
+    "tittle": "Nusantara Web3 & Blockchain",
+    "categoryIds": ["ctg-10", "ctg-1"],
+    "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
+    "description": "Komunitas developer smart contract dan desentralisasi Web3 se-Indonesia."
+  },
+  {
+    "id": "comm-9",
+    "tittle": "Malang Product Management Club",
+    "categoryIds": ["ctg-11", "ctg-15"],
+    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+    "description": "Forum PM & Product Owner untuk strategi produk, agile delivery, dan metrik bisnis."
+  },
+  {
+    "id": "comm-10",
+    "tittle": "Database & Distributed Systems ID",
+    "categoryIds": ["ctg-3", "ctg-12"],
+    "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80",
+    "description": "Eksplorasi optimasi query, PostgreSQL, distributed cache, dan event streaming."
+  },
+  {
+    "id": "comm-11",
+    "tittle": "Quality Assurance Engineers ID",
+    "categoryIds": ["ctg-13", "ctg-1"],
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+    "description": "Sharing best practice automated testing, E2E framework, dan continuous testing."
+  },
+  {
+    "id": "comm-12",
+    "tittle": "Open Source Contributors Indonesia",
+    "categoryIds": ["ctg-14", "ctg-15"],
+    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+    "description": "Mendukung talenta lokal berkontribusi aktif dalam ekosistem software open source global."
+  },
+  {
+    "id": "comm-13",
+    "tittle": "Tech Leadership & Career Circle",
+    "categoryIds": ["ctg-15", "ctg-1"],
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    "description": "Diskusi mentoring bagi tech lead, engineering manager, dan transisi karir tech."
+  },
+  {
+    "id": "comm-14",
+    "tittle": "Depok Modern Web Society",
+    "categoryIds": ["ctg-4", "ctg-3"],
+    "image": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80",
+    "description": "Komunitas lokal pengembang fullstack modern di Depok dan sekitarnya."
+  },
+  {
+    "id": "comm-15",
+    "tittle": "Data Engineering & Analytics ID",
+    "categoryIds": ["ctg-8", "ctg-12"],
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    "description": "Membangun data pipeline handal, data warehouse, ETL, dan real-time streaming."
+  }
+]
