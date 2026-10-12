@@ -11,5 +11,4 @@ WORKDIR /eventhub
 COPY --from=builder /eventhub/dist/ .
 COPY --from=builder /eventhub/nginx.conf /etc/nginx/conf.d/default.conf
 
-
 CMD ["nginx", "-g", "daemon off;"]
