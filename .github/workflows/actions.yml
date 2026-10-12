@@ -71,11 +71,11 @@ jobs:
           name: upload-dist
           path: .
 
-      - name: Build image
-        run: docker build --build-arg VITE_HOST_ORIGIN=/cuanbot -t ghcr.io/${{ github.actor }}/eventhub-app:latest .
-
       - name: Login to ghcr.io
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io --username "${{ github.actor }}" --password-stdin
+
+      - name: Build image
+        run: docker build --build-arg VITE_HOST_ORIGIN=/cuanbot -t ghcr.io/${{ github.actor }}/eventhub-app:latest .
 
       - name: Push image to ghcr
         run: docker push ghcr.io/${{ github.actor }}/eventhub-app:latest
