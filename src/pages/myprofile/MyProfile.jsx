@@ -19,7 +19,6 @@ function MyProfile() {
       setUser: { isFulfilled },
     },
     events: {
-      events: { joined: eventsJoined, saved },
       count: { joined: totalJoined, saved: totalSaved },
     },
     communities: { joined: communitiesJoined },

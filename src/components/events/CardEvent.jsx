@@ -6,8 +6,6 @@ import { PiMapPinLight } from 'react-icons/pi';
 import { Link } from 'react-router';
 import { useRedux } from '../../hooks/useRedux';
 import {
-  getMyEventsJoined,
-  getMyEventsSaved,
   joinEvent,
   leaveEvent,
   saveEvent,
@@ -34,7 +32,6 @@ function CardEvent({ event, isDark }) {
     }
     if (!save) {
       dispatch(saveEvent(event.id));
-      dispatch(getMyEventsSaved());
       setSave(true);
     }
   };
@@ -47,7 +44,6 @@ function CardEvent({ event, isDark }) {
     if (!join) {
       dispatch(joinEvent(event.id));
       setJoin(true);
-      dispatch(getMyEventsJoined());
     }
   };
 

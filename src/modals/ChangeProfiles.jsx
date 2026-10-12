@@ -37,10 +37,6 @@ function ChangeProfiles({ modal, setModal, setPreviewPhoto, previewPhoto }) {
       formData.append('image', e.image[0]);
     }
 
-    for (let [key, value] of formData.entries()) {
-      console.log(`${key}:`, value);
-    }
-
     dispatch(setUser(formData));
     console.log('Form Data:', formData);
   }

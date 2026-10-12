@@ -90,6 +90,7 @@ export const joinEvent = createAsyncThunk(
       if (!response.ok) {
         return rejectWithValue(data);
       }
+      data.data.id = payload;
       return data;
     } catch (error) {
       const data = {
@@ -118,7 +119,7 @@ export const leaveEvent = createAsyncThunk(
       if (!response.ok) {
         return rejectWithValue(data);
       }
-      data.id = payload;
+      data.data.id = payload;
       return data;
     } catch (error) {
       const data = {
@@ -245,7 +246,24 @@ const events = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.isError = false;
+        state.count.joined += 1;
         state.message = payload.message;
+
+        const eventJoinToUpdate = state.events.joined.find(
+          (event) => event.id === payload.data.id
+        );
+
+        if (eventJoinToUpdate) {
+          eventJoinToUpdate.attendee = payload.data.attendee;
+        }
+
+        const eventSaveToUpdate = state.events.saved.find(
+          (event) => event.id === payload.data.id
+        );
+
+        if (eventSaveToUpdate) {
+          eventSaveToUpdate.attendee = payload.data.attendee;
+        }
       })
       .addCase(joinEvent.rejected, (state, { payload }) => {
         state.isLoading = false;
@@ -265,8 +283,25 @@ const events = createSlice({
         state.isError = false;
         state.message = payload.message;
         state.count.joined -= 1;
+
+        const eventJoinToUpdate = state.events.joined.find(
+          (event) => event.id === payload.data.id
+        );
+
+        if (eventJoinToUpdate) {
+          eventJoinToUpdate.attendee = payload.data.attendee;
+        }
+
+        const eventSaveToUpdate = state.events.saved.find(
+          (event) => event.id === payload.data.id
+        );
+
+        if (eventSaveToUpdate) {
+          eventSaveToUpdate.attendee = payload.data.attendee;
+        }
+
         state.events.joined = state.events.joined.filter(
-          (events) => events.id != payload.id
+          (events) => events.id !== payload.data.id
         );
       })
       .addCase(leaveEvent.rejected, (state, { payload }) => {
@@ -285,6 +320,7 @@ const events = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.isError = false;
+        state.count.saved += 1;
         state.message = payload.message;
       })
       .addCase(saveEvent.rejected, (state, { payload }) => {
@@ -305,7 +341,7 @@ const events = createSlice({
         state.isError = false;
         state.count.saved -= 1;
         state.events.saved = state.events.saved.filter(
-          (events) => events.id != payload.id
+          (events) => events.id !== payload.id
         );
         state.message = payload.message;
       })
