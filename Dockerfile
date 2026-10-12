@@ -1,17 +1,15 @@
-# FROM alpine:latest AS clone-project
+FROM node:lts-alpine3.24 AS builder
 
-# WORKDIR /files
-# RUN apk add git
-# RUN git clone https://github.com/almarufh/frontend-eventhub
-
-FROM node:lts-alpine3.24 AS buider
-WORKDIR /create
-COPY --from=clone-project /files/ .
+WORKDIR /eventhub
+COPY . .
 RUN npm ci
 RUN npm run build
 
-FROM nginx:alpine
+FROM nginx:1.31.6-alpine3.24
 
-WORKDIR /usr/share/nginx/html
-COPY --from=buider /create/dist/ .
+WORKDIR /eventhub
+COPY --from=builder /eventhub/dist/ .
 COPY --from=buider /create/nginx.conf /etc/nginx/conf.d/default.conf
+
+
+CMD ["nginx", "-g", "daemon off;"]
