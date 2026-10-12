@@ -1,34 +1,17 @@
-FROM node:lts-alpine3.24 AS builder
+# FROM alpine:latest AS clone-project
 
-WORKDIR /eventhub
-COPY . .
+# WORKDIR /files
+# RUN apk add git
+# RUN git clone https://github.com/almarufh/frontend-eventhub
+
+FROM node:lts-alpine3.24 AS buider
+WORKDIR /create
+COPY --from=clone-project /files/ .
 RUN npm ci
 RUN npm run build
 
-FROM nginx:1.31.6-alpine3.24
+FROM nginx:alpine
 
-WORKDIR /eventhub
-COPY --from=builder /eventhub/dist/ .
-
-RUN cat <<KEREN > /etc/nginx/conf.d/default.conf
-server {
-    listen 80;
-    server_name localhost;
-
-    location / {
-        root /eventhub;
-        index index.html;
-        try_files \$uri \$uri/ /index.html;
-    }
-
-    location /cuanbot/ {
-        proxy_pass http://server-backend:2027/;
-        proxy_set_header Host \$host;
-        proxy_set_header X-Real-IP \$remote_addr;
-        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto \$scheme;
-    }
-}
-KEREN
-
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /usr/share/nginx/html
+COPY --from=buider /create/dist/ .
+COPY --from=buider /create/nginx.conf /etc/nginx/conf.d/default.conf
