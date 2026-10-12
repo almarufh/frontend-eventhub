@@ -9,7 +9,7 @@ FROM nginx:1.31.6-alpine3.24
 
 WORKDIR /eventhub
 COPY --from=builder /eventhub/dist/ .
-COPY --from=buider /create/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /eventhub/nginx.conf /etc/nginx/conf.d/default.conf
 
 
 CMD ["nginx", "-g", "daemon off;"]
